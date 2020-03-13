@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# v1.5.80
+## (2020-03-13)
+
+* Scale window content to fit 1024x600 [Lorenzo Alberto Maria Ambrosi]
+
 # v1.5.79
 ## (2020-02-20)
 
