@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# v1.5.61
+## (2020-03-24)
+
+* Including Arch / Manjaro install instructions [Tom]
+
 # v1.5.60
 ## (2019-10-18)
 
