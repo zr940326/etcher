@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# v1.5.82
+## (2020-04-23)
+
+* Trigger update for v1.5.81 [Lorenzo Alberto Maria Ambrosi]
+
 # v1.5.81
 ## (2020-04-14)
 
