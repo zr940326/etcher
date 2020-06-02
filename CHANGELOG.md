@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# v1.5.96
+## (2020-06-02)
+
+* Allow selecting local files from command line [Lorenzo Alberto Maria Ambrosi]
+* Allow Etcher to be opened with `etcher://...` links [Lorenzo Alberto Maria Ambrosi]
+* Allow skipping notarization when building package (dev) [Lorenzo Alberto Maria Ambrosi]
+
 # v1.5.95
 ## (2020-06-01)
 
