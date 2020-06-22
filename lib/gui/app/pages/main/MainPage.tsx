@@ -75,9 +75,12 @@ function getImageBasename() {
 		return '';
 	}
 
-	const selectionImageName = selectionState.getImageName();
-	const imageBasename = path.basename(selectionState.getImagePath());
-	return selectionImageName || imageBasename;
+	const image = selectionState.getImage();
+	if (image.drive) {
+		return image.drive.description;
+	}
+	const imageBasename = path.basename(image.path);
+	return image.name || imageBasename;
 }
 
 const StepBorder = styled.div<{
@@ -129,7 +132,7 @@ export class MainPage extends React.Component<
 			isWebviewShowing: false,
 			hideSettings: true,
 			source: {
-				imagePath: '',
+				sourcePath: '',
 				SourceType: sourceDestination.File,
 			},
 			...this.stateHelper(),
