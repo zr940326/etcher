@@ -44,7 +44,10 @@ import {
 
 import { bytesToClosestUnit } from '../../../../shared/units';
 
-import { DriveSelector, getDriveListLabel } from './DriveSelector';
+import {
+	TargetSelector,
+	getDriveListLabel,
+} from '../../components/target-selector/target-selector';
 import { FlashStep } from './Flash';
 
 import EtcherSvg from '../../../assets/etcher.svg';
@@ -72,9 +75,12 @@ function getImageBasename() {
 		return '';
 	}
 
-	const selectionImageName = selectionState.getImageName();
-	const imageBasename = path.basename(selectionState.getImagePath());
-	return selectionImageName || imageBasename;
+	const image = selectionState.getImage();
+	if (image.drive) {
+		return image.drive.description;
+	}
+	const imageBasename = path.basename(image.path);
+	return image.name || imageBasename;
 }
 
 const StepBorder = styled.div<{
@@ -126,7 +132,7 @@ export class MainPage extends React.Component<
 			isWebviewShowing: false,
 			hideSettings: true,
 			source: {
-				imagePath: '',
+				sourcePath: '',
 				SourceType: sourceDestination.File,
 			},
 			...this.stateHelper(),
@@ -240,7 +246,7 @@ export class MainPage extends React.Component<
 					)}
 
 					{notFlashingOrSplitView && (
-						<DriveSelector
+						<TargetSelector
 							disabled={shouldDriveStepBeDisabled}
 							hasDrive={this.state.hasDrive}
 							flashing={this.state.isFlashing}
